@@ -17,6 +17,12 @@ paths:
       summary: Retrieve all applications
       operationId: retrieveApplicationCollection
       responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Success"
         default:
           description: Error
           content:
@@ -26,6 +32,13 @@ paths:
 
 components:
   schemas:
+    Success:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+
     ProblemDetails:
       description: >
         Problem Details object as defined in
